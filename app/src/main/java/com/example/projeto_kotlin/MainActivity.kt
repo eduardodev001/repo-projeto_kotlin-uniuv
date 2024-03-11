@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
 
                 val h3 = TextStyle(
                     fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp,
+                    fontSize = 30.sp,
                     letterSpacing = 0.15.sp
                 )
 
@@ -52,6 +52,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 
 
 /*Text(
