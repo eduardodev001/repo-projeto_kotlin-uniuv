@@ -3,13 +3,14 @@ package com.example.projeto_kotlin
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
 import com.example.projeto_kotlin.ui.theme.Projeto_kotlinTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,27 +18,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Projeto_kotlinTheme {
-                // A surface container using the 'background' color from the theme
+
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
+
+                    Box(modifier = Modifier.fillMaxSize()) {
+
+                        Image(painter = painterResource(id = R.drawable.img1), contentDescription = null, modifier = Modifier.align(Alignment.TopStart).size(100.dp))
+
+                        Image(painter = painterResource(id = R.drawable.img2), contentDescription = null, modifier = Modifier.align(Alignment.TopEnd).size(100.dp))
+
+                        Image(painter = painterResource(id = R.drawable.img3), contentDescription = null, modifier = Modifier.align(Alignment.BottomStart).size(100.dp))
+
+                        Image(painter = painterResource(id = R.drawable.img4), contentDescription = null, modifier = Modifier.align(Alignment.BottomEnd).size(100.dp))
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Projeto_kotlinTheme {
-        Greeting("Android")
     }
 }
