@@ -25,12 +25,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Projeto_kotlinTheme {
-
-
-
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
                     desenha_tela()
-
                 }
             }
         }
@@ -42,29 +41,47 @@ val h3 = TextStyle(
     fontSize = 30.sp,
     letterSpacing = 0.15.sp
 )
+
 @Composable
-fun desenha_tela()
- {
-     Box(modifier = Modifier.fillMaxSize()) {
+fun desenha_tela() {
+    Box(modifier = Modifier.fillMaxSize()) {
+        Image(
+            painter = painterResource(id = R.drawable.img1),
+            contentDescription = null,
+            modifier = Modifier.align(Alignment.TopStart).size(100.dp)
+        )
 
-         Image(painter = painterResource(id = R.drawable.img1), contentDescription = null, modifier = Modifier.align(Alignment.TopStart).size(100.dp))
+        Image(
+            painter = painterResource(id = R.drawable.img2),
+            contentDescription = null,
+            modifier = Modifier.align(Alignment.TopEnd).size(100.dp)
+        )
 
-         Image(painter = painterResource(id = R.drawable.img2), contentDescription = null, modifier = Modifier.align(Alignment.TopEnd).size(100.dp))
+        Image(
+            painter = painterResource(id = R.drawable.img3),
+            contentDescription = null,
+            modifier = Modifier.align(Alignment.BottomStart).size(100.dp)
+        )
 
-         Image(painter = painterResource(id = R.drawable.img3), contentDescription = null, modifier = Modifier.align(Alignment.BottomStart).size(100.dp))
+        Image(
+            painter = painterResource(id = R.drawable.img4),
+            contentDescription = null,
+            modifier = Modifier.align(Alignment.BottomEnd).size(100.dp)
+        )
 
-         Image(painter = painterResource(id = R.drawable.img4), contentDescription = null, modifier = Modifier.align(Alignment.BottomEnd).size(100.dp))
+        var texto by remember { mutableStateOf("Olá Mundo do Kotlin!!") }
 
-         var texto by remember { mutableStateOf("Olá Mundo do Kotlin!!") }
+        Text(
+            text = texto,
+            style = h3,
+            modifier = Modifier.align(Alignment.Center)
+        )
 
-         Text(
-             text = texto,
-             style = h3,
-             modifier = Modifier.align(Alignment.Center)
-         )
-
-         Button(onClick = { texto = "Hello World" }, modifier = Modifier.align(Alignment.BottomCenter)) {
-             Text(text = "Alterarção")
-         }
-     }
+        Button(
+            onClick = { texto = "Hello World" },
+            modifier = Modifier.align(Alignment.BottomCenter)
+        ) {
+            Text(text = "Botão Mágico")
+        }
+    }
 }
