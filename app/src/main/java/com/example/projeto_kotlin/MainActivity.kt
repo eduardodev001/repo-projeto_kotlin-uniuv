@@ -48,25 +48,37 @@ fun desenha_tela() {
         Image(
             painter = painterResource(id = R.drawable.img1),
             contentDescription = null,
-            modifier = Modifier.align(Alignment.TopStart).size(100.dp)
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(start = 16.dp, top = 16.dp)
+                .size(100.dp)
         )
 
         Image(
             painter = painterResource(id = R.drawable.img2),
             contentDescription = null,
-            modifier = Modifier.align(Alignment.TopEnd).size(100.dp)
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(end = 16.dp, top = 16.dp)
+                .size(100.dp)
         )
 
         Image(
             painter = painterResource(id = R.drawable.img3),
             contentDescription = null,
-            modifier = Modifier.align(Alignment.BottomStart).size(100.dp)
+            modifier = Modifier
+                .align(Alignment.BottomStart)
+                .padding(start = 16.dp, bottom = 16.dp)
+                .size(100.dp)
         )
 
         Image(
             painter = painterResource(id = R.drawable.img4),
             contentDescription = null,
-            modifier = Modifier.align(Alignment.BottomEnd).size(100.dp)
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .padding(end = 16.dp, bottom = 16.dp)
+                .size(100.dp)
         )
 
         var texto by remember { mutableStateOf("Olá Mundo do Kotlin!!") }
@@ -79,7 +91,9 @@ fun desenha_tela() {
 
         Button(
             onClick = { texto = "Hello World" },
-            modifier = Modifier.align(Alignment.BottomCenter)
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(bottom = 300.dp) // Adicione um espaçamento na parte inferior
         ) {
             Text(text = "Botão Mágico")
         }
