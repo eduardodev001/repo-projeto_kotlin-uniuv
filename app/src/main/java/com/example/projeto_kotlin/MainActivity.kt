@@ -93,7 +93,7 @@ fun desenha_tela() {
             onClick = { texto = "Hello World" },
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .padding(bottom = 300.dp) // Adicione um espaçamento na parte inferior
+                .padding(bottom = 300.dp)
         ) {
             Text(text = "Botão Mágico")
         }
